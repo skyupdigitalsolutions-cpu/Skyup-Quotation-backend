@@ -177,7 +177,18 @@ app.delete("/api/quotations/:id", requireAuth, requireAdmin, async (req, res) =>
 
 app.get("/api/templates", requireAuth, async (req, res) => {
   const rows = await Template.find().sort({ sort: 1, _id: 1 });
-  res.json(rows);
+  res.json(
+    rows.map((r) => ({
+      id: r._id,
+      tkey: r.tkey,
+      category: r.category,
+      name: r.name,
+      deliv: r.deliv,
+      price: r.price,
+      unit: r.unit,
+      note: r.note
+    }))
+  );
 });
 
 app.post("/api/templates", requireAuth, async (req, res) => {

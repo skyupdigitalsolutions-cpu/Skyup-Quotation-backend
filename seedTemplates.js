@@ -34,8 +34,8 @@ const seedTemplates = [
     price: 0, unit: "onetime", note: "Pricing as per your requirements"
   },
   {
-    tkey: "ai_chatbot", category: "AI Automation", name: "AI Chatbot & WhatsApp Automation",
-    deliv: "• Multichannel AI chatbot for website and WhatsApp\n• Automated sales and support conversations\n• Lead capture, qualification and follow-up\n• WhatsApp notification and campaign automation\n• AI summary and escalation alerts",
+    tkey: "ai_chatbot", category: "AI Automation", name: "WhatsApp Automation & AI Chatbot",
+    deliv: "WhatsApp Business Integration:\n• WhatsApp Business API setup\n• Send & receive messages\n• Bulk messaging templates configuration\n• Production-ready integration",
     price: 0, unit: "onetime", note: "Pricing as per your requirements"
   },
   {
