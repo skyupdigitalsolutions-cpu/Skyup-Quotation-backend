@@ -236,6 +236,12 @@ const distDir = join(__dirname, "..", "client", "dist");
 if (fs.existsSync(distDir)) {
   app.use(express.static(distDir));
   app.get("*", (req, res) => res.sendFile(join(distDir, "index.html")));
+} else {
+  // Backend-only deploy (e.g. Railway): give the root a friendly response
+  // so hitting the URL confirms the API is up instead of "Cannot GET /".
+  app.get("/", (req, res) => {
+    res.json({ status: "ok", service: "skyup-quotation-api" });
+  });
 }
 
 connectDB()
